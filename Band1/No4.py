@@ -20,9 +20,9 @@ class BilibiliSprite(object):
 
     def detail_url(self):
         url = "http://www.mju.edu.cn/xxyw/list.htm"
-        for i in range(self.__total_pages):
+        for i in range(int(self.__total_pages)):
             if i > 1:
-                url = "http://www.mju.edu.cn/xxyw/list" + i + ".htm"
+                url = "http://www.mju.edu.cn/xxyw/list" + str(i) + ".htm"
             resp = requests.get(url)
             content = resp.content.decode(resp.apparent_encoding)
             page_re_rule = '<a class="column-news-item item-\d* clearfix" href="(.*)" target="_blank"><span class="column-news-title">'
