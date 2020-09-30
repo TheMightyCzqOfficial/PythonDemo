@@ -21,6 +21,7 @@ class BilibiliSprite(object):
     def detail_url(self):
         url = "http://www.mju.edu.cn/xxyw/list.htm"
         for i in range(int(self.__total_pages)):
+            print("进度" + str(i))
             if i > 1:
                 url = "http://www.mju.edu.cn/xxyw/list" + str(i) + ".htm"
             resp = requests.get(url)
